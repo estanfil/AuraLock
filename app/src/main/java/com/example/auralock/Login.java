@@ -20,7 +20,7 @@ import com.google.firebase.auth.FirebaseAuth;
 /*
 Login is the Launcher Activity of the AuraLock application.  Login allows the user to login to the
 app using Authentication from Google Firebase.  From the Login page a user is also able to
-click on text to make an account if it is there first time usng the app.
+click on text to make an account if it is there first time using the app.
  */
 
 public class Login extends AppCompatActivity {
