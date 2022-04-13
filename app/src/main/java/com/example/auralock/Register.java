@@ -17,6 +17,10 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+/*
+The Register activity creates new users within Google Firebase.  On the Register page a user is
+also able to navigate to the Login page if they previously created an account.
+ */
 
 public class Register extends AppCompatActivity {
 
@@ -40,6 +44,7 @@ public class Register extends AppCompatActivity {
         fAuth = FirebaseAuth.getInstance();
         progressBar = findViewById(R.id.progressBar);
 
+        //Checks to see if the entered credentials already match a user.
         if(fAuth.getCurrentUser() != null){
             startActivity(new Intent(getApplicationContext(),Register.class));
             finish();
@@ -67,15 +72,18 @@ public class Register extends AppCompatActivity {
                 }
                 progressBar.setVisibility(View.VISIBLE);
 
-                //register the user in firebase
-                fAuth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                //Register the user in firebase
+                fAuth.createUserWithEmailAndPassword(email,password)
+                        .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
-                            Toast.makeText(Register.this, "User Created", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(Register.this, "User Created",
+                                    Toast.LENGTH_SHORT).show();
                             startActivity(new Intent(getApplicationContext(),MainActivity.class));
                         }else{
-                            Toast.makeText(Register.this, "Error " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                            Toast.makeText(Register.this, "Error " + task.getException()
+                                    .getMessage(), Toast.LENGTH_SHORT).show();
                         }
                     }
                 });
