@@ -17,6 +17,11 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+/*
+Login is the Launcher Activity of the AuraLock application.  Login allows the user to login to the
+app using Authentication from Google Firebase.  From the Login page a user is also able to
+click on text to make an account if it is there first time usng the app.
+ */
 
 public class Login extends AppCompatActivity {
 
@@ -45,6 +50,10 @@ public class Login extends AppCompatActivity {
                 String email = mEmail.getText().toString().trim();
                 String password = mPassword.getText().toString().trim();
 
+                /*
+                This string of if statements just checks to make sure the text fields have
+                valid inputs, if not alerting the users to check the fields.
+                 */
                 if(TextUtils.isEmpty(email)){
                     mEmail.setError("Email is Required");
                     return;
@@ -61,14 +70,24 @@ public class Login extends AppCompatActivity {
                 }
                 progressBar.setVisibility(View.VISIBLE);
 
-                fAuth.signInWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                /*
+                fAuth is a Firebase Authentication tool that that directly connects the text
+                fields to firebase to check if there is an existing email and password with the
+                ones entered and if there is directing the user to the homepage.  If there is not a
+                user associated with the entered credentials an error message will display indicating
+                so.
+                 */
+                fAuth.signInWithEmailAndPassword(email,password)
+                        .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
-                            Toast.makeText(Login.this, "User Found", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(Login.this, "User Found",
+                                    Toast.LENGTH_SHORT).show();
                             startActivity(new Intent(getApplicationContext(), MainActivity.class));
                         } else {
-                            Toast.makeText(Login.this, "Error " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                            Toast.makeText(Login.this, "Error " + task.getException()
+                                    .getMessage(), Toast.LENGTH_SHORT).show();
                         }
                     }
                 });
