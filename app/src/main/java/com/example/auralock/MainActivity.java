@@ -19,8 +19,13 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+/*
+MainActivity is the homepage of the mobile application.
+ */
+
 public class MainActivity extends AppCompatActivity {
 
+    //Declaring all variables, including the database references
     private Button btnUnlock, btnAddFace, btnSettings, btnFixed, btnHistory, btnCancel;
     private Button btnLive;
 
@@ -38,6 +43,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //Initializing (activating) all the fields that will be changed through the user
+        //Essentially connects the XML file to the activity
         btnUnlock = findViewById(R.id.btnUnlock);
         btnAddFace = findViewById(R.id.btnAddFace);
         btnHistory = findViewById(R.id.btnHistory);
@@ -48,6 +55,7 @@ public class MainActivity extends AppCompatActivity {
         btnCancel =  findViewById(R.id.btnCancel);
         btnLive = findViewById(R.id.btnLive);
 
+        //This is what connects the Firebase variables to the app
         mDatabaseRefUnlock = FirebaseDatabase.getInstance().getReference("AuraLock Data")
                 .child("Unlock");
         mDatabaseRefDelay = FirebaseDatabase.getInstance().getReference("AuraLock Data")
@@ -61,6 +69,12 @@ public class MainActivity extends AppCompatActivity {
         mLiveUpdate = FirebaseDatabase.getInstance().getReference("AuraLock Data")
                 .child("LiveCapture").child("newCapture");
 
+        /*
+        ValueEventListeners wait until the database variable change and then take action after
+        that.  For example, this one waits for "timeRemaining" (the countdown timer for fixed
+        unlock) to change and then displays that time.  It displays the time by using the snapshot
+        it collected and setting that value to rTime and then setting that to txtTRemain.
+         */
         mDatabaseRefRTime.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -74,6 +88,11 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        /*
+        OnClickListeners are the listeners for buttons when action needs to be taken.  For example,
+        this OnClickListener waits until the Cancel Fixed Unlock button is pressed and sets the
+        "cancelDelayUnlock" to "True" in order to cancel the Fixed unlock.
+         */
         btnCancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -106,6 +125,12 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        /*
+        startActivity is what occurs when you want a button to take you from one app page to another.
+        Here, the Add Face (as shown to the user) button, when pressed, will take the user to the
+        NewFace activity which is where they are able to add faces to the recognized face
+        library on the Raspberry Pi.
+         */
         btnAddFace.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -114,6 +139,11 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        /*
+        This History button takes the user to a page that displays an image of the last person
+        who unlocked the door, as well as the name of the person and the date and time when the
+        door was unlocked.
+         */
         btnHistory.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -122,6 +152,10 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        /*
+        The Settings button takes the user to the About page that gives the user more information
+        about the functionality of the AuraLock mobile app and allows the user to logout of the app.
+         */
         btnSettings.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
