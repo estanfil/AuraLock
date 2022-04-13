@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "693091107393",
+    "firebase_url": "https://project-auralock-default-rtdb.firebaseio.com",
+    "project_id": "project-auralock",
+    "storage_bucket": "project-auralock.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:693091107393:android:29712cf65dae730e98fcc0",
+        "android_client_info": {
+          "package_name": "com.example.auralock"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "693091107393-ba22sjneu2kjnn7vmkitobk1epnjfhai.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDrS6ztUNAzOVUKTKoFA_t_jUpD9b2Lmwc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "693091107393-ba22sjneu2kjnn7vmkitobk1epnjfhai.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:693091107393:android:4ef3feecab7d014b98fcc0",
+        "android_client_info": {
+          "package_name": "com.example.auralockupload"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "693091107393-ba22sjneu2kjnn7vmkitobk1epnjfhai.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDrS6ztUNAzOVUKTKoFA_t_jUpD9b2Lmwc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "693091107393-ba22sjneu2kjnn7vmkitobk1epnjfhai.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
