@@ -3,14 +3,19 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1405" />
+        <entry key="app/src/main/res/drawable/AuraLock Logo_background.xml" value="0.2585" />
+        <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.1405" />
         <entry key="app/src/main/res/layout/activity_last_unlocked.xml" value="0.335" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.3098958333333333" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.2865483601888021" />
         <entry key="app/src/main/res/layout/activity_new_face.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_new_user.xml" value="0.3098958333333333" />
-        <entry key="app/src/main/res/layout/activity_real_time_image.xml" value="0.19610507246376813" />
+        <entry key="app/src/main/res/layout/activity_real_time_image.xml" value="0.40183868408203127" />
         <entry key="app/src/main/res/layout/activity_register.xml" value="0.3098958333333333" />
         <entry key="app/src/main/res/layout/activity_settings.xml" value="0.3098958333333333" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/auralock_icon.xml" value="0.1405" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/auralock_logo.xml" value="0.1405" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.2085" />
       </map>
     </option>

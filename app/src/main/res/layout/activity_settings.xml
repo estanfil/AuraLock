@@ -9,70 +9,57 @@
 
     <TextView
         android:id="@+id/abtLock5"
-        android:layout_width="387dp"
-        android:layout_height="82dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="16dp"
+        android:layout_width="347dp"
+        android:layout_height="92dp"
+        android:layout_marginTop="12dp"
         android:fontFamily="@font/abeezee"
-        android:text="ADD FACE:  Add face allows the user to add a face to be recognized by the door.  After selecting an image and giving it a name, the image uploads to Firebase where the Raspberry Pi reads the image and adds the face to the recognized faces library."
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
+        android:text="ADD FACE:  Add face allows the user to add a face to be recognized by the door.  After selecting an image and giving it a name, the image uploads to Firebase where the Raspberry Pi retrieves it and encodes the image to the recognized faces library."
+        app:layout_constraintStart_toStartOf="@+id/abtLock6"
         app:layout_constraintTop_toBottomOf="@+id/abtLock4" />
 
     <TextView
         android:id="@+id/abtLock6"
-        android:layout_width="380dp"
-        android:layout_height="86dp"
+        android:layout_width="349dp"
+        android:layout_height="91dp"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="24dp"
         android:fontFamily="@font/abeezee"
-        android:text="LIVE CAPTURE: Live Capture takes an image when the button is pressed to allow a user to remotely see a live image remotely."
+        android:text="LIVE CAPTURE: Live Capture takes an image when the button is pressed, allowing a user to remotely view a live image."
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/abtLock5" />
 
     <TextView
         android:id="@+id/abtLock4"
-        android:layout_width="375dp"
-        android:layout_height="84dp"
-        android:layout_marginStart="16dp"
+        android:layout_width="347dp"
+        android:layout_height="86dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="16dp"
         android:fontFamily="@font/abeezee"
         android:text="HISTORY:  History provides the user with the ability to see the last person that unlocked the door.  This image is captured from the door camera and is uploaded to Google Firebase, then the mobile application retrieves the image."
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/abtLock5"
         app:layout_constraintTop_toBottomOf="@+id/abtLock3" />
 
     <TextView
         android:id="@+id/abtLock3"
-        android:layout_width="375dp"
-        android:layout_height="70dp"
-        android:layout_marginStart="16dp"
+        android:layout_width="347dp"
+        android:layout_height="71dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="16dp"
         android:fontFamily="@font/abeezee"
         android:text="LOGIN/REGISTER:  The Login and Register features allow a user to create an account to access their AuraLock.  This account is created using Authentication on Google Firebase."
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/abtLock4"
         app:layout_constraintTop_toBottomOf="@+id/abtLock2" />
 
     <TextView
         android:id="@+id/abtLock2"
-        android:layout_width="375dp"
+        android:layout_width="345dp"
         android:layout_height="20dp"
-        android:layout_marginStart="16dp"
         android:layout_marginTop="12dp"
-        android:layout_marginEnd="16dp"
         android:fontFamily="@font/abeezee"
         android:text="Functions of the Mobile Application:"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/abtLock3"
         app:layout_constraintTop_toBottomOf="@+id/abtLock" />
 
     <Button
@@ -81,7 +68,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginBottom="90dp"
+        android:layout_marginBottom="60dp"
         android:fontFamily="@font/abeezee"
         android:onClick="logout"
         android:text="Logout"
@@ -106,28 +93,30 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="372dp"
-        android:layout_marginBottom="90dp"
+        android:layout_marginBottom="60dp"
         android:fontFamily="@font/abeezee"
         android:text="Go Home"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.126"
+        app:layout_constraintHorizontal_bias="0.16"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView5"
         app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/abtLock"
-        android:layout_width="379dp"
+        android:layout_width="347dp"
         android:layout_height="138dp"
-        android:layout_marginStart="16dp"
         android:layout_marginTop="12dp"
-        android:layout_marginEnd="16dp"
         android:fontFamily="@font/abeezee"
-        android:text="AuraLock was created by Dillon McCardell and Erin Stanfill as a Senior Design project for the Electrical and Computer Engineering Department at the University of Wyoming.  AuraLock combines facial recognition with a mobile application to give homeowners ease of access into their homes while not taking away security."
+        android:text="AuraLock was created by Dillon McCardell and Erin Stanfill as a Senior Design project for the Electrical and Computer Engineering Department at the University of Wyoming. AuraLock combines facial recognition with a mobile application, providing homeowners both convenience and security."
         android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/abtLock2"
         app:layout_constraintTop_toBottomOf="@+id/imageView5" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
