@@ -76,7 +76,15 @@ public class NewFace extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if(snapshot.exists()){
                     String rPiState = snapshot.getValue().toString();
-                    txtRpi.setText("The Raspberry Pi is " + rPiState);
+                    if(rPiState.equals("working")){
+                        findViewById(R.id.loadingPanel).setVisibility(View.VISIBLE);
+                        txtRpi.setText("The Raspberry Pi is Processing..");
+
+                    }
+                    if(rPiState.equals("complete")) {
+                        findViewById(R.id.loadingPanel).setVisibility(View.GONE);
+                        txtRpi.setText("Your image has been Processed!");
+                    }
                 }
             }
             @Override

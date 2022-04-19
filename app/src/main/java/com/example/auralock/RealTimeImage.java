@@ -54,6 +54,12 @@ public class RealTimeImage extends AppCompatActivity {
                 if(snapshot.exists()){
                     String updateState = snapshot.getValue().toString();
                     textUpdate.setText("The live image is " + updateState);
+                    if(updateState.equals("working")){
+                        findViewById(R.id.loadingPanel).setVisibility(View.VISIBLE);
+                    }
+                    if(updateState.equals("complete")){
+                        findViewById(R.id.loadingPanel).setVisibility(View.GONE);
+                    }
                     mImage = mLiveStore.child("LiveCapture.jpg");
                     long MAXBYTES = 1024*1024;
                     mImage.getBytes(MAXBYTES).addOnSuccessListener(new OnSuccessListener<byte[]>() {
